@@ -2,24 +2,13 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 	<script type="text/javascript">
-		function httpGet(theUrl)
-		{
-			var xmlHttp = null;
-
-			xmlHttp = new XMLHttpRequest();
-			xmlHttp.open( "GET", theUrl, false );
-			xmlHttp.send( null );
-			return xmlHttp.responseText;
-		}
-
-		try {
-		document.write(httpGet("http://chat.sc2tv.ru/memfs/channel-0.json"));
-		} catch(e) {
-			document.write(e);
-		}
+		$.get("http://chat.sc2tv.ru/memfs/channel-0.json", function(data) {
+			document.write(data);
+		});
 		document.write("@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	</script>
 </body>
